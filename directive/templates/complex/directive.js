@@ -1,14 +1,25 @@
-angular.module('<%= appname %>').directive('<%= _.camelize(name) %>', function() {
-    return {
-        restrict: 'E',
-        replace: true,
-        scope: {
+(function () {
+    'use strict';
 
-        },
-        templateUrl: '<%= htmlPath %>',
-        link: function(scope, element, attrs, fn) {
+    angular
+        .module('<%= appname %>')
+        .directive('<%= name %>', <%= name %>);
 
+    function <%= name %>(input, arg) {
+        var directive = {
+            restrict: 'E',
+            replace: true,
+            scope: {
+    
+            },
+            templateUrl: '<%= htmlPath %>',
+            link: link
+        };
+        return directive;
+
+        function link(scope, element, attrs, fn) {
 
         }
-    };
-});
+    } //function <%= name %>
+
+})();

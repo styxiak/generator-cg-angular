@@ -3,6 +3,13 @@
 
 var pkg = require('./package.json');
 
+var timestamp = function () {
+    var date = new Date();
+    var time = date.getTime();
+
+    return time;
+};
+
 //Using exclusion patterns slows down Grunt significantly
 //instead of creating a set of patterns like '**/*.js' and '!**/node_modules/**'
 //this method is used to create a set of inclusive patterns for all subdirectories
@@ -116,8 +123,8 @@ module.exports = function (grunt) {
         options: {
           remove: ['script[data-remove!="false"]','link[data-remove!="false"]'],
           append: [
-            {selector:'body',html:'<script src="app.full.min.js"></script>'},
-            {selector:'head',html:'<link rel="stylesheet" href="app.full.min.css">'}
+            {selector:'body',html:'<script src="app.full.min.js?' + timestamp()+'"></script>'},
+            {selector:'head',html:'<link rel="stylesheet" href="app.full.min.css?' + timestamp()+'">'}
           ]
         },
         src:'index.html',
@@ -146,7 +153,10 @@ module.exports = function (grunt) {
       main: {
         src: 'temp/app.full.js',
         dest:'dist/app.full.min.js'
-      }
+      },
+        options: {
+            sourceMap: true
+        }
     },
     htmlmin: {
       main: {
@@ -200,7 +210,19 @@ module.exports = function (grunt) {
     }
   });
 
-  grunt.registerTask('build',['jshint','clean:before','less','dom_munger','ngtemplates','cssmin','concat','ngAnnotate','uglify','copy','htmlmin','clean:after']);
+  grunt.registerTask('build',[
+    'jshint',
+    'clean:before',
+    'less',
+    'dom_munger',
+    'ngtemplates',
+    'cssmin',
+    'concat',
+    'ngAnnotate',
+    'uglify',
+    'copy',
+    'htmlmin',
+    'clean:after']);
   grunt.registerTask('serve', ['dom_munger:read','jshint','connect', 'watch']);
   grunt.registerTask('test',['dom_munger:read','karma:all_tests']);
 

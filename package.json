@@ -1,13 +1,15 @@
 {
   "name": "generator-cg-angular",
-  "version": "3.3.0",
+  "version": "3.2.0",
   "description": "Yeoman Generator for Enterprise Angular projects.",
   "keywords": [
     "yeoman-generator",
     "angular"
   ],
   "homepage": "https://github.com/cgross/generator-cg-angular",
-  "bugs": "https://github.com/cgross/generator-cg-angular/issues",
+  "bugs": {
+    "url": "https://github.com/cgross/generator-cg-angular/issues"
+  },
   "author": {
     "name": "Chris Gross",
     "email": "schtoo@schtoo.com",
@@ -38,5 +40,26 @@
     {
       "type": "MIT"
     }
-  ]
+  ],
+  "gitHead": "2fc5fa6c2597aec807a89f8299f6a95efc505ce1",
+  "_id": "generator-cg-angular@3.2.0",
+  "_shasum": "b7541a644a5fd146913ef3da291ea5522674f300",
+  "_from": "generator-cg-angular@*",
+  "_npmVersion": "1.5.0-alpha-1",
+  "_npmUser": {
+    "name": "cgross",
+    "email": "schtoo@schtoo.com"
+  },
+  "maintainers": [
+    {
+      "name": "cgross",
+      "email": "schtoo@schtoo.com"
+    }
+  ],
+  "dist": {
+    "shasum": "b7541a644a5fd146913ef3da291ea5522674f300",
+    "tarball": "http://registry.npmjs.org/generator-cg-angular/-/generator-cg-angular-3.2.0.tgz"
+  },
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/generator-cg-angular/-/generator-cg-angular-3.2.0.tgz"
 }
